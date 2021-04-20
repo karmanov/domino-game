@@ -1,4 +1,4 @@
-package io.karmanov.domino;
+package io.karmanov.domino.model;
 
 import java.util.Objects;
 
@@ -17,6 +17,12 @@ public class Domino {
 
     public int getRightValue() {
         return rightValue;
+    }
+
+    public void flip() {
+        int oldRLeftValue = this.leftValue;
+        this.leftValue = this.rightValue;
+        this.rightValue = oldRLeftValue;
     }
 
     @Override
