@@ -1,7 +1,5 @@
 package io.karmanov.domino.model;
 
-import io.karmanov.domino.model.Domino;
-
 import java.util.ArrayList;
 import java.util.List;
 

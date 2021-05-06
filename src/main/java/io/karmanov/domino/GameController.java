@@ -23,12 +23,19 @@ public class GameController {
         System.out.println("initialize the stoke....STARTED");
         List<Domino> allDominoes = new ArrayList<>();
         for (int i = 0; i < 7; i++) {
-            for (int j = 0; j < 7; j++) {
+            for (int j = 0; j <= i; j++) {
                 Domino domino = new Domino(i, j);
                 if (!allDominoes.contains(domino))
                     allDominoes.add(domino);
             }
         }
+
+        for (int i = 0; i < 7; i++) {
+            Domino domino = new Domino(i, 6-i);
+        }
+
+
+
         Collections.shuffle(allDominoes);
         stock = new LinkedList<>(allDominoes);
         System.out.println("initialize the stoke....DONE");
@@ -127,7 +134,7 @@ public class GameController {
         board.addLast(domino);
     }
 
-    public boolean isCanBePlacedOnLeft(Domino dominoOnBoard, Domino dominoToCheck) {
+    public static boolean isCanBePlacedOnLeft(Domino dominoOnBoard, Domino dominoToCheck) {
         boolean couldBePlaced = false;
         int leftValue = dominoOnBoard.getLeftValue();
         if (leftValue != dominoToCheck.getRightValue()) {
@@ -142,7 +149,7 @@ public class GameController {
     }
 
 
-    public boolean isCanBePlacedOnRight(Domino dominoOnBoard, Domino dominoToCheck) {
+    public static boolean isCanBePlacedOnRight(Domino dominoOnBoard, Domino dominoToCheck) {
         boolean couldBePlaced = false;
         int rightValue = dominoOnBoard.getRightValue();
         if (rightValue != dominoToCheck.getLeftValue()) {

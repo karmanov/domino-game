@@ -11,6 +11,10 @@ public class Domino {
         this.rightValue = rightValue;
     }
 
+    public Domino(int leftValue) {
+        this.leftValue = leftValue;
+    }
+
     public int getLeftValue() {
         return leftValue;
     }
